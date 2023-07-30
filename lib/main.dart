@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:players_bank_redesign/shared/app_colors.dart';
 
 void main() {
   runApp(const LoginPage());
@@ -15,7 +16,69 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(),
+      theme: ThemeData.dark().copyWith(
+        primaryColor: AppColors.white,
+        scaffoldBackgroundColor: AppColors.backgroundColor,
+      ),
+      home: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 45.0,
+                      color: AppColors.orange,
+                      child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'ENTRAR',
+                            style: TextStyle(
+                              fontFamily: 'Barracuda',
+                              fontSize: 16.0,
+                              color: AppColors.backgroundColor,
+                            ),
+                          )),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10.0),
+              Row(
+                children: [
+                  Expanded(
+                      child: Container(
+                    height: 45.0,
+                    child: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'QUERO MINHA CONTA',
+                          style: TextStyle(
+                            fontFamily: 'Barracuda',
+                            fontSize: 16.0,
+                            color: AppColors.orange,
+                          ),
+                        ),
+                        style: ButtonStyle(
+                          shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(0),
+                            ),
+                          ),
+                          side: MaterialStateProperty.all(
+                            BorderSide(width: 2, color: AppColors.orange),
+                          ),
+                        )),
+                  )),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
