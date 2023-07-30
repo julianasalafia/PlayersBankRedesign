@@ -15,56 +15,60 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
-
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
         primaryColor: AppColors.white,
         scaffoldBackgroundColor: AppColors.backgroundColor,
       ),
       home: Scaffold(
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(15, 45, 15, 15),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  height: 50,
-                  child: Image.asset(
-                    'assets/images/pb_logo.png',
-                    fit: BoxFit.scaleDown,
+        body: Padding(
+          padding: const EdgeInsets.fromLTRB(15, 45, 15, 15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Column(
+                children: [
+                  SizedBox(
+                    height: 50,
+                    child: Image.asset(
+                      'assets/images/pb_logo.png',
+                      fit: BoxFit.scaleDown,
+                    ),
                   ),
+                  SizedBox(height: 10.0),
+                ],
+              ),
+              Center(
+                child: Column(
+                  children: [
+                    Text(
+                      'O BANCO QUE',
+                      style: TextStyle(
+                        fontFamily: 'Barracuda',
+                        fontSize: 35.0,
+                        color: AppColors.white,
+                      ),
+                    ),
+                    Text(
+                      'JOGA JUNTO',
+                      style: TextStyle(
+                        fontFamily: 'Barracuda',
+                        fontSize: 35.0,
+                        color: AppColors.orange,
+                      ),
+                    ),
+                    SizedBox(
+                      child: Image.asset(
+                        'assets/images/controle.png',
+                        fit: BoxFit.scaleDown,
+                      ),
+                    ),
+                  ],
                 ),
-                SizedBox(height: 10.0),
-                Text(
-                  'O BANCO QUE',
-                  style: TextStyle(
-                    fontFamily: 'Barracuda',
-                    fontSize: 35.0,
-                    color: AppColors.white,
-                  ),
-                ),
-                Text(
-                  'JOGA JUNTO',
-                  style: TextStyle(
-                    fontFamily: 'Barracuda',
-                    fontSize: 35.0,
-                    color: AppColors.orange,
-                  ),
-                ),
-                Container(
-                  height: screenHeight * 0.5,
-                  width: screenWidth * 0.5,
-                  child: Image.asset(
-                    'assets/images/controle.png',
-                    fit: BoxFit.scaleDown,
-                  ),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
+              ),
+              Center(
+                child: Column(
                   children: [
                     Row(
                       children: [
@@ -117,8 +121,8 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
