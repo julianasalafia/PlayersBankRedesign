@@ -32,11 +32,12 @@ class LoginDocumentPage extends StatelessWidget {
                 ),
                 SizedBox(height: 25.0),
                 Text(
-                  'BEM VINDO DE VOLTA!',
+                  'Bem vindo de volta!',
                   style: kTitleTextStyle.copyWith(color: AppColors.orange),
                 ),
+                SizedBox(height: 10.0),
                 Text(
-                  'Digite o seu CPF',
+                  'Digite o seu CPF:',
                   style: kTitleTextStyle,
                 ),
                 SizedBox(height: 25.0),

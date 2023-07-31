@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:players_bank_redesign/shared/app_colors.dart';
+import 'package:players_bank_redesign/shared/constants.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -6,7 +8,21 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('HOME'),
+      body: Center(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            'HOME',
+            style: kTitleTextStyle,
+          ),
+          Text(
+            'TO BE DESIGNED',
+            style: kTitleTextStyle.copyWith(color: AppColors.orange),
+          )
+        ],
+      )),
     );
   }
 }
