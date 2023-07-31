@@ -9,15 +9,17 @@ class ShadowButton extends StatelessWidget {
     super.key,
     required this.buttonText,
     required this.onPressed,
+    required this.nextPage,
   });
 
   final String buttonText;
   final void Function() onPressed;
+  final Widget nextPage;
 
   void _onPressed(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => DocumentPage()),
+      MaterialPageRoute(builder: (context) => nextPage),
     );
   }
 

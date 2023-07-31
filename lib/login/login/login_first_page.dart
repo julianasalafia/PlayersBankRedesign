@@ -27,6 +27,9 @@ class LoginFirstPage extends StatefulWidget {
 }
 
 class _LoginFirstPageState extends State<LoginFirstPage> {
+  Widget loginDocumentPage = LoginDocumentPage();
+  Widget documentPage = DocumentPage();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,8 +82,9 @@ class _LoginFirstPageState extends State<LoginFirstPage> {
                           onPressed: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => DocumentPage()),
+                                builder: (context) => loginDocumentPage),
                           ),
+                          nextPage: LoginDocumentPage(),
                         ),
                       ),
                     ],
@@ -89,14 +93,15 @@ class _LoginFirstPageState extends State<LoginFirstPage> {
                   Row(
                     children: [
                       Expanded(
-                          child: ShadowButton(
-                        buttonText: createAccountButtonText,
-                        onPressed: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => DocumentPage()),
+                        child: ShadowButton(
+                          buttonText: createAccountButtonText,
+                          onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => documentPage)),
+                          nextPage: DocumentPage(),
                         ),
-                      )),
+                      ),
                     ],
                   ),
                 ],

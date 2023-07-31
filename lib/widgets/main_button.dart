@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../login/login/login_document_page.dart';
 import '../login/sign_up/document_page.dart';
 import '../shared/app_colors.dart';
 import '../shared/constants.dart';
@@ -10,15 +9,17 @@ class MainButtonStyle extends StatelessWidget {
     Key? key,
     required this.buttonText,
     required this.onPressed,
+    required this.nextPage,
   }) : super(key: key);
 
   final String buttonText;
   final void Function() onPressed;
+  final Widget? nextPage;
 
   void _onPressed(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => DocumentPage()),
+      MaterialPageRoute(builder: (context) => nextPage!),
     );
   }
 

@@ -12,6 +12,8 @@ class DocumentPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget nickNamePage = NickNamePage();
+
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.fromLTRB(15, 45, 15, 15),
@@ -62,8 +64,9 @@ class DocumentPage extends StatelessWidget {
                   buttonText: continueButton,
                   onPressed: () => Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => NickNamePage()),
+                    MaterialPageRoute(builder: (context) => nickNamePage),
                   ),
+                  nextPage: NickNamePage(),
                 ),
               ],
             ),

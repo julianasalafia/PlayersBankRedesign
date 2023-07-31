@@ -11,6 +11,8 @@ class LoginDocumentPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget homePage = HomePage();
+
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.fromLTRB(15, 45, 15, 15),
@@ -65,8 +67,9 @@ class LoginDocumentPage extends StatelessWidget {
                   buttonText: continueButton,
                   onPressed: () => Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
+                    MaterialPageRoute(builder: (context) => homePage),
                   ),
+                  nextPage: HomePage(),
                 ),
               ],
             ),

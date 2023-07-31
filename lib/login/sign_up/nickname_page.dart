@@ -29,7 +29,7 @@ class NickNamePage extends StatelessWidget {
                 ),
                 SizedBox(height: 25.0),
                 Text(
-                  'Como você gostaria de ser chamado? ',
+                  'Qual seu username?',
                   style: kTitleTextStyle,
                 ),
                 SizedBox(height: 25.0),
@@ -48,7 +48,7 @@ class NickNamePage extends StatelessWidget {
                         borderSide:
                             BorderSide(color: AppColors.orange, width: 2),
                       ),
-                      hintText: '000.000.000-00'),
+                      hintText: '@MeuApelido'),
                   style: kEditTextStyle,
                 ),
               ],
@@ -56,7 +56,11 @@ class NickNamePage extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                MainButtonStyle(buttonText: continueButton, onPressed: () {}),
+                MainButtonStyle(
+                  buttonText: continueButton,
+                  onPressed: () {},
+                  nextPage: null,
+                ),
               ],
             ),
           ],
