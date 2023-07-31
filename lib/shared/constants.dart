@@ -7,6 +7,13 @@ const kTitleTextStyle = TextStyle(
   color: AppColors.white,
 );
 
+const kEditTextStyle = TextStyle(
+  fontFamily: 'Barracuda',
+  fontWeight: FontWeight.w300,
+  fontSize: 20.0,
+  color: AppColors.white,
+);
+
 const kMainButtonTextStyle = TextStyle(
   fontFamily: 'Barracuda',
   fontSize: 16.0,
