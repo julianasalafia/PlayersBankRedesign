@@ -6,7 +6,4 @@ I was really inspired by the Player's Bank redesign idea from [Wallyngson Guedes
 Screenshot 1 | Screenshot 2  | Screenshot 3
 :-: | :-: | :-:
 |![](https://github.com/julianasalafia/PlayersBankRedesign/blob/main/screenshots/login_page.png) |![](https://github.com/julianasalafia/PlayersBankRedesign/blob/main/screenshots/document_page.png) | ![](https://github.com/julianasalafia/PlayersBankRedesign/blob/main/screenshots/nickname_page.png)|
-
-Screenshot 4 | Screenshot 5  | Screenshot 6
-:-: | :-: | :-:
 |![](https://github.com/julianasalafia/PlayersBankRedesign/blob/main/screenshots/create_password_page.png) |![]() | ![]()|
