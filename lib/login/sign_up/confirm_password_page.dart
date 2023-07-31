@@ -4,7 +4,7 @@ import 'package:players_bank_redesign/widgets/main_button.dart';
 import 'package:players_bank_redesign/widgets/text_field_widget.dart';
 import '../../widgets/go_back_button.dart';
 
-const createPasswordButton = 'confirmar senha';
+const createPasswordButton = 'CONFIRMAR SENHA';
 const passwordTitle = 'Confirme a sua senha...';
 const hintText = 'A123456a';
 

@@ -5,7 +5,7 @@ import 'package:players_bank_redesign/widgets/text_field_widget.dart';
 import '../../widgets/go_back_button.dart';
 import 'nickname_page.dart';
 
-const continueButton = 'continuar';
+const continueButton = 'CONTINUAR';
 const documentTitle = 'Digite o seu CPF';
 const hintText = '000.000.000-00';
 

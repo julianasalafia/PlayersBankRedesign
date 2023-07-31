@@ -6,7 +6,7 @@ import 'package:players_bank_redesign/widgets/main_button.dart';
 import '../../widgets/go_back_button.dart';
 import '../../widgets/text_field_widget.dart';
 
-const continueButton = 'continuar';
+const continueButton = 'CONTINUAR';
 const usernameTitle = 'Qual seu username?';
 const hintText = '@MeuApelido';
 
