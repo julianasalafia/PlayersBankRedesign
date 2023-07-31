@@ -7,9 +7,11 @@ class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget({
     Key? key,
     required this.hintText,
+    this.obscureText = false,
   }) : super(key: key);
 
   final String hintText;
+  final bool obscureText;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +30,7 @@ class TextFieldWidget extends StatelessWidget {
         ),
         hintText: hintText,
       ),
+      obscureText: obscureText,
       style: kEditTextStyle,
     );
   }

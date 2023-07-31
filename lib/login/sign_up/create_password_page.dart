@@ -6,7 +6,7 @@ import '../../widgets/go_back_button.dart';
 
 const createPasswordButton = 'criar senha';
 const passwordTitle = 'Crie sua senha...';
-const hintText = '********';
+const hintText = 'A123456a';
 
 class CreatePasswordPage extends StatelessWidget {
   const CreatePasswordPage({super.key});
@@ -38,7 +38,10 @@ class CreatePasswordPage extends StatelessWidget {
                   style: kEditTextStyle,
                 ),
                 const SizedBox(height: sizedBoxHeight),
-                const TextFieldWidget(hintText: hintText),
+                const TextFieldWidget(
+                  hintText: hintText,
+                  obscureText: true,
+                ),
               ],
             ),
             Column(
