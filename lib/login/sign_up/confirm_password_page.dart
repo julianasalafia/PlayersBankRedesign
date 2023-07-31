@@ -3,18 +3,16 @@ import 'package:players_bank_redesign/shared/constants.dart';
 import 'package:players_bank_redesign/widgets/main_button.dart';
 import 'package:players_bank_redesign/widgets/text_field_widget.dart';
 import '../../widgets/go_back_button.dart';
-import 'confirm_password_page.dart';
 
-const createPasswordButton = 'criar senha';
-const passwordTitle = 'Crie sua senha...';
+const createPasswordButton = 'confirmar senha';
+const passwordTitle = 'Confirme a sua senha...';
 const hintText = 'A123456a';
 
-class CreatePasswordPage extends StatelessWidget {
-  const CreatePasswordPage({super.key});
+class ConfirmPasswordPage extends StatelessWidget {
+  const ConfirmPasswordPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Widget confirmPasswordPage = const ConfirmPasswordPage();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.fromLTRB(15, 45, 15, 15),
@@ -51,12 +49,8 @@ class CreatePasswordPage extends StatelessWidget {
               children: [
                 MainButtonStyle(
                   buttonText: createPasswordButton,
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => confirmPasswordPage),
-                  ),
-                  nextPage: const ConfirmPasswordPage(),
+                  onPressed: () {},
+                  nextPage: null,
                 ),
               ],
             ),
