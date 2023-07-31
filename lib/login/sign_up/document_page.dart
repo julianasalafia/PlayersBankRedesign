@@ -7,15 +7,20 @@ class DocumentPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Padding(
         padding: EdgeInsets.fromLTRB(15, 45, 15, 15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(
-              Icons.close,
-              color: AppColors.orange,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+              child: Icon(
+                Icons.chevron_left,
+                color: AppColors.orange,
+              ),
             ),
             SizedBox(height: 25.0),
             Text(
