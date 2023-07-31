@@ -3,7 +3,6 @@ import 'package:players_bank_redesign/home_page/home_page.dart';
 import 'package:players_bank_redesign/shared/app_colors.dart';
 import 'package:players_bank_redesign/shared/constants.dart';
 import 'package:players_bank_redesign/widgets/main_button.dart';
-
 import '../../widgets/go_back_button.dart';
 import '../../widgets/text_field_widget.dart';
 

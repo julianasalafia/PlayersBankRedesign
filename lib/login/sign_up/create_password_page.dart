@@ -3,19 +3,16 @@ import 'package:players_bank_redesign/shared/constants.dart';
 import 'package:players_bank_redesign/widgets/main_button.dart';
 import 'package:players_bank_redesign/widgets/text_field_widget.dart';
 import '../../widgets/go_back_button.dart';
-import 'nickname_page.dart';
 
-const continueButton = 'continuar';
-const documentTitle = 'Digite o seu CPF';
-const hintText = '000.000.000-00';
+const createPasswordButton = 'criar senha';
+const passwordTitle = 'Crie sua senha...';
+const hintText = '********';
 
-class DocumentPage extends StatelessWidget {
-  const DocumentPage({super.key});
+class CreatePasswordPage extends StatelessWidget {
+  const CreatePasswordPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Widget nickNamePage = const NickNamePage();
-
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.fromLTRB(15, 45, 15, 15),
@@ -32,8 +29,13 @@ class DocumentPage extends StatelessWidget {
                 ),
                 const SizedBox(height: sizedBoxHeight),
                 const Text(
-                  documentTitle,
+                  passwordTitle,
                   style: kTitleTextStyle,
+                ),
+                const SizedBox(height: sizedBoxHeightMin),
+                const Text(
+                  'Sua senha deve conter letras e números, pelo menos uma letra maiúscula.',
+                  style: kEditTextStyle,
                 ),
                 const SizedBox(height: sizedBoxHeight),
                 const TextFieldWidget(hintText: hintText),
@@ -43,12 +45,9 @@ class DocumentPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 MainButtonStyle(
-                  buttonText: continueButton,
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => nickNamePage),
-                  ),
-                  nextPage: const NickNamePage(),
+                  buttonText: createPasswordButton,
+                  onPressed: () {},
+                  nextPage: null,
                 ),
               ],
             ),
