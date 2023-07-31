@@ -4,6 +4,7 @@ import '../../shared/constants.dart';
 import '../../widgets/main_button.dart';
 import '../../widgets/shadow_button.dart';
 import '../sign_up/document_page.dart';
+import 'login_document_page.dart';
 
 const imageLogo = 'assets/images/pb_logo.png';
 const imageControle = 'assets/images/controle.png';
@@ -89,7 +90,13 @@ class _LoginFirstPageState extends State<LoginFirstPage> {
                     children: [
                       Expanded(
                           child: ShadowButton(
-                              buttonText: createAccountButtonText)),
+                        buttonText: createAccountButtonText,
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DocumentPage()),
+                        ),
+                      )),
                     ],
                   ),
                 ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../login/login/login_document_page.dart';
 import '../login/sign_up/document_page.dart';
 import '../shared/app_colors.dart';
 import '../shared/constants.dart';
@@ -23,7 +24,7 @@ class MainButtonStyle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 45.0,
       child: Material(
         color: AppColors.orange,

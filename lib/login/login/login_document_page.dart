@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:players_bank_redesign/home_page/home_page.dart';
 import 'package:players_bank_redesign/shared/app_colors.dart';
 import 'package:players_bank_redesign/shared/constants.dart';
 import 'package:players_bank_redesign/widgets/main_button.dart';
 
-import 'nickname_page.dart';
-
 const continueButton = 'continuar';
 
-class DocumentPage extends StatelessWidget {
-  const DocumentPage({super.key});
+class LoginDocumentPage extends StatelessWidget {
+  const LoginDocumentPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +29,10 @@ class DocumentPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 25.0),
+                Text(
+                  'BEM VINDO DE VOLTA!',
+                  style: kTitleTextStyle.copyWith(color: AppColors.orange),
+                ),
                 Text(
                   'Digite o seu CPF',
                   style: kTitleTextStyle,
@@ -62,7 +65,7 @@ class DocumentPage extends StatelessWidget {
                   buttonText: continueButton,
                   onPressed: () => Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => NickNamePage()),
+                    MaterialPageRoute(builder: (context) => HomePage()),
                   ),
                 ),
               ],

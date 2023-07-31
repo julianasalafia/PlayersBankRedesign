@@ -3,12 +3,10 @@ import 'package:players_bank_redesign/shared/app_colors.dart';
 import 'package:players_bank_redesign/shared/constants.dart';
 import 'package:players_bank_redesign/widgets/main_button.dart';
 
-import 'nickname_page.dart';
-
 const continueButton = 'continuar';
 
-class DocumentPage extends StatelessWidget {
-  const DocumentPage({super.key});
+class NickNamePage extends StatelessWidget {
+  const NickNamePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +29,7 @@ class DocumentPage extends StatelessWidget {
                 ),
                 SizedBox(height: 25.0),
                 Text(
-                  'Digite o seu CPF',
+                  'Como você gostaria de ser chamado? ',
                   style: kTitleTextStyle,
                 ),
                 SizedBox(height: 25.0),
@@ -58,13 +56,7 @@ class DocumentPage extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                MainButtonStyle(
-                  buttonText: continueButton,
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => NickNamePage()),
-                  ),
-                ),
+                MainButtonStyle(buttonText: continueButton, onPressed: () {}),
               ],
             ),
           ],
