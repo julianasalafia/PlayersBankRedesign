@@ -4,18 +4,24 @@ import 'package:players_bank_redesign/shared/app_colors.dart';
 import 'package:players_bank_redesign/shared/constants.dart';
 import 'package:players_bank_redesign/widgets/main_button.dart';
 
+import '../../widgets/go_back_button.dart';
+import '../../widgets/text_field_widget.dart';
+
 const continueButton = 'continuar';
+const documentTitle = 'Digite o seu CPF';
+const hintText = '000.000.000-00';
+const welcomeBackTitle = 'Bem vindo de volta!';
 
 class LoginDocumentPage extends StatelessWidget {
   const LoginDocumentPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Widget homePage = HomePage();
+    Widget homePage = const HomePage();
 
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.fromLTRB(15, 45, 15, 15),
+        padding: const EdgeInsets.fromLTRB(15, 45, 15, 15),
         child: Column(
           children: [
             Column(
@@ -25,40 +31,20 @@ class LoginDocumentPage extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).pop();
                   },
-                  child: Icon(
-                    Icons.chevron_left,
-                    color: AppColors.orange,
-                  ),
+                  child: const GoBackButton(),
                 ),
-                SizedBox(height: 25.0),
+                const SizedBox(height: sizedBoxHeight),
                 Text(
-                  'Bem vindo de volta!',
+                  welcomeBackTitle,
                   style: kTitleTextStyle.copyWith(color: AppColors.orange),
                 ),
-                SizedBox(height: 10.0),
-                Text(
-                  'Digite o seu CPF:',
+                const SizedBox(height: sizedBoxHeightMin),
+                const Text(
+                  documentTitle,
                   style: kTitleTextStyle,
                 ),
-                SizedBox(height: 25.0),
-                TextField(
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.zero,
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.zero,
-                        borderSide:
-                            BorderSide(color: AppColors.orange, width: 2),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.zero,
-                        borderSide:
-                            BorderSide(color: AppColors.orange, width: 2),
-                      ),
-                      hintText: '000.000.000-00'),
-                  style: kEditTextStyle,
-                ),
+                const SizedBox(height: sizedBoxHeight),
+                const TextFieldWidget(hintText: hintText),
               ],
             ),
             Column(
@@ -70,7 +56,7 @@ class LoginDocumentPage extends StatelessWidget {
                     context,
                     MaterialPageRoute(builder: (context) => homePage),
                   ),
-                  nextPage: HomePage(),
+                  nextPage: const HomePage(),
                 ),
               ],
             ),

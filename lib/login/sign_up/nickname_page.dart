@@ -3,7 +3,12 @@ import 'package:players_bank_redesign/shared/app_colors.dart';
 import 'package:players_bank_redesign/shared/constants.dart';
 import 'package:players_bank_redesign/widgets/main_button.dart';
 
+import '../../widgets/go_back_button.dart';
+import '../../widgets/text_field_widget.dart';
+
 const continueButton = 'continuar';
+const usernameTitle = 'Qual seu username?';
+const hintText = '@MeuApelido';
 
 class NickNamePage extends StatelessWidget {
   const NickNamePage({super.key});
@@ -12,7 +17,7 @@ class NickNamePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.fromLTRB(15, 45, 15, 15),
+        padding: const EdgeInsets.fromLTRB(15, 45, 15, 15),
         child: Column(
           children: [
             Column(
@@ -22,34 +27,16 @@ class NickNamePage extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).pop();
                   },
-                  child: Icon(
-                    Icons.chevron_left,
-                    color: AppColors.orange,
-                  ),
+                  child: const GoBackButton(),
                 ),
-                SizedBox(height: 25.0),
-                Text(
-                  'Qual seu username?',
+                const SizedBox(height: sizedBoxHeight),
+                const Text(
+                  usernameTitle,
                   style: kTitleTextStyle,
                 ),
-                SizedBox(height: 25.0),
-                TextField(
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.zero,
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.zero,
-                        borderSide:
-                            BorderSide(color: AppColors.orange, width: 2),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.zero,
-                        borderSide:
-                            BorderSide(color: AppColors.orange, width: 2),
-                      ),
-                      hintText: '@MeuApelido'),
-                  style: kEditTextStyle,
+                const SizedBox(height: sizedBoxHeight),
+                const TextFieldWidget(
+                  hintText: hintText,
                 ),
               ],
             ),

@@ -2,21 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:players_bank_redesign/shared/app_colors.dart';
 import 'package:players_bank_redesign/shared/constants.dart';
 import 'package:players_bank_redesign/widgets/main_button.dart';
+import 'package:players_bank_redesign/widgets/text_field_widget.dart';
 
+import '../../widgets/go_back_button.dart';
 import 'nickname_page.dart';
 
 const continueButton = 'continuar';
+const documentTitle = 'Digite o seu CPF';
+const hintText = '000.000.000-00';
 
 class DocumentPage extends StatelessWidget {
   const DocumentPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Widget nickNamePage = NickNamePage();
+    Widget nickNamePage = const NickNamePage();
 
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.fromLTRB(15, 45, 15, 15),
+        padding: const EdgeInsets.fromLTRB(15, 45, 15, 15),
         child: Column(
           children: [
             Column(
@@ -26,35 +30,15 @@ class DocumentPage extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).pop();
                   },
-                  child: Icon(
-                    Icons.chevron_left,
-                    color: AppColors.orange,
-                  ),
+                  child: const GoBackButton(),
                 ),
-                SizedBox(height: 25.0),
-                Text(
-                  'Digite o seu CPF',
+                const SizedBox(height: sizedBoxHeight),
+                const Text(
+                  documentTitle,
                   style: kTitleTextStyle,
                 ),
-                SizedBox(height: 25.0),
-                TextField(
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.zero,
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.zero,
-                        borderSide:
-                            BorderSide(color: AppColors.orange, width: 2),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.zero,
-                        borderSide:
-                            BorderSide(color: AppColors.orange, width: 2),
-                      ),
-                      hintText: '000.000.000-00'),
-                  style: kEditTextStyle,
-                ),
+                const SizedBox(height: sizedBoxHeight),
+                const TextFieldWidget(hintText: hintText),
               ],
             ),
             Column(
@@ -66,7 +50,7 @@ class DocumentPage extends StatelessWidget {
                     context,
                     MaterialPageRoute(builder: (context) => nickNamePage),
                   ),
-                  nextPage: NickNamePage(),
+                  nextPage: const NickNamePage(),
                 ),
               ],
             ),

@@ -26,3 +26,6 @@ const kShadowButtonTextStyle = TextStyle(
   fontSize: 16.0,
   color: AppColors.orange,
 );
+
+const sizedBoxHeight = 25.0;
+const sizedBoxHeightMin = 10.0;

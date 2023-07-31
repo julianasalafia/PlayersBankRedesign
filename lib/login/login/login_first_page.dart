@@ -14,7 +14,6 @@ const createAccountButtonText = 'QUERO MINHA CONTA';
 const titlePartIText = 'O BANCO QUE';
 const titlePartIIText = 'JOGA JUNTO';
 
-const height = 10.0;
 const imageHeight = 50.0;
 
 class LoginFirstPage extends StatefulWidget {
@@ -27,8 +26,8 @@ class LoginFirstPage extends StatefulWidget {
 }
 
 class _LoginFirstPageState extends State<LoginFirstPage> {
-  Widget loginDocumentPage = LoginDocumentPage();
-  Widget documentPage = DocumentPage();
+  Widget loginDocumentPage = const LoginDocumentPage();
+  Widget documentPage = const DocumentPage();
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +47,7 @@ class _LoginFirstPageState extends State<LoginFirstPage> {
                     fit: BoxFit.scaleDown,
                   ),
                 ),
-                SizedBox(height: height),
+                const SizedBox(height: sizedBoxHeightMin),
               ],
             ),
             Center(
@@ -84,12 +83,12 @@ class _LoginFirstPageState extends State<LoginFirstPage> {
                             MaterialPageRoute(
                                 builder: (context) => loginDocumentPage),
                           ),
-                          nextPage: LoginDocumentPage(),
+                          nextPage: const LoginDocumentPage(),
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: height),
+                  const SizedBox(height: sizedBoxHeightMin),
                   Row(
                     children: [
                       Expanded(
@@ -99,7 +98,7 @@ class _LoginFirstPageState extends State<LoginFirstPage> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => documentPage)),
-                          nextPage: DocumentPage(),
+                          nextPage: const DocumentPage(),
                         ),
                       ),
                     ],
