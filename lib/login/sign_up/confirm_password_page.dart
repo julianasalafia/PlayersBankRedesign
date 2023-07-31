@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:players_bank_redesign/login/sign_up/code_confirmation_page.dart';
 import 'package:players_bank_redesign/shared/constants.dart';
 import 'package:players_bank_redesign/widgets/main_button.dart';
 import 'package:players_bank_redesign/widgets/text_field_widget.dart';
@@ -13,6 +14,8 @@ class ConfirmPasswordPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget codeConfirmationPage = const CodeConfirmationPage();
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.fromLTRB(15, 45, 15, 15),
@@ -49,8 +52,12 @@ class ConfirmPasswordPage extends StatelessWidget {
               children: [
                 MainButtonStyle(
                   buttonText: createPasswordButton,
-                  onPressed: () {},
-                  nextPage: null,
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => codeConfirmationPage),
+                  ),
+                  nextPage: const CodeConfirmationPage(),
                 ),
               ],
             ),

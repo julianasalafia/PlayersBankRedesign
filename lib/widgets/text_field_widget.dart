@@ -35,3 +35,29 @@ class TextFieldWidget extends StatelessWidget {
     );
   }
 }
+
+class TextFieldNumberWidget extends StatelessWidget {
+  const TextFieldNumberWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const TextField(
+      decoration: InputDecoration(
+        border: OutlineInputBorder(borderRadius: BorderRadius.zero),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.zero,
+          borderSide: BorderSide(width: 2, color: Colors.white30),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.zero,
+          borderSide: BorderSide(color: AppColors.orange, width: 2),
+        ),
+      ),
+      textAlign: TextAlign.center,
+      keyboardType: TextInputType.number,
+      style: TextStyle(fontFamily: 'Barracuda', fontSize: 16.0),
+    );
+  }
+}

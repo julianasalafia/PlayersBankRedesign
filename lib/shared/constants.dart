@@ -18,13 +18,18 @@ const kMainButtonTextStyle = TextStyle(
   fontFamily: 'Barracuda',
   fontSize: 16.0,
   color: AppColors.grey,
-  backgroundColor: AppColors.orange,
 );
 
 const kShadowButtonTextStyle = TextStyle(
   fontFamily: 'Barracuda',
   fontSize: 16.0,
   color: AppColors.orange,
+);
+
+const kWarningTextStyle = TextStyle(
+  fontFamily: 'Greycliff',
+  fontSize: 13.0,
+  color: AppColors.white,
 );
 
 const sizedBoxHeight = 25.0;
