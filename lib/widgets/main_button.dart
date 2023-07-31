@@ -25,12 +25,15 @@ class MainButtonStyle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 45.0,
-      color: AppColors.orange,
-      child: TextButton(
-        onPressed: () => _onPressed(context),
-        child: Text(
-          buttonText,
-          style: kMainButtonTextStyle,
+      child: Material(
+        color: AppColors.orange,
+        elevation: 0,
+        child: TextButton(
+          onPressed: () => _onPressed(context),
+          child: Text(
+            buttonText,
+            style: kMainButtonTextStyle,
+          ),
         ),
       ),
     );
