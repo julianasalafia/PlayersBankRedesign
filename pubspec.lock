@@ -41,14 +41,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.1"
-  country_state_picker:
+  country_state_city_picker:
     dependency: "direct main"
     description:
-      name: country_state_picker
-      sha256: "9efad370ad2e9b943c69b88d403a361309d90f985bb0404a9a7d54827bd8d779"
+      name: country_state_city_picker
+      sha256: "509c282165df329ee5a29babb28e13dce3bc32166cea21b202a49c44d20cfef3"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.4"
+    version: "1.2.8"
   cupertino_icons:
     dependency: "direct main"
     description:
