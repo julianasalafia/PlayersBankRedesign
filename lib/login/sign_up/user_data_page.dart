@@ -46,13 +46,13 @@ class _UserDataPageState extends State<UserDataPage> {
                 ),
                 const SizedBox(height: sizedBoxHeight),
                 const TextFieldWidget(hintText: 'Meu Nome Completo'),
-                const SizedBox(height: sizedBoxHeight),
+                const SizedBox(height: sizedBoxHeightMin),
                 const TextFieldWidget(hintText: 'Eu Nasci no Dia dd/mm/AAAA'),
-                const SizedBox(height: sizedBoxHeight),
+                const SizedBox(height: sizedBoxHeightMin),
                 const TextFieldWidget(hintText: 'Meu RG'),
-                const SizedBox(height: sizedBoxHeight),
+                const SizedBox(height: sizedBoxHeightMin),
                 const TextFieldWidget(hintText: 'Órgão Emissor do RG'),
-                const SizedBox(height: sizedBoxHeight),
+                const SizedBox(height: sizedBoxHeightMin),
                 CountryStatePicker(
                   stateLabel: Visibility(
                     visible: showLabel,
@@ -93,7 +93,7 @@ class _UserDataPageState extends State<UserDataPage> {
                     state = st;
                   }),
                 ),
-                const SizedBox(height: sizedBoxHeight),
+                const SizedBox(height: sizedBoxHeightMin),
               ],
             ),
             Column(
