@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:players_bank_redesign/login/sign_up/user_data_page.dart';
 
 import '../../shared/constants.dart';
 import '../../widgets/go_back_button.dart';
@@ -16,6 +17,7 @@ class CodeConfirmationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget userDataPage = const UserDataPage();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.fromLTRB(15, 45, 15, 15),
@@ -54,8 +56,11 @@ class CodeConfirmationPage extends StatelessWidget {
               children: [
                 MainButtonStyle(
                   buttonText: continueButton,
-                  onPressed: () {},
-                  nextPage: null,
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => userDataPage),
+                  ),
+                  nextPage: const UserDataPage(),
                 ),
                 const SizedBox(height: sizedBoxHeightMin),
                 const Text(
