@@ -1,12 +1,10 @@
+import 'package:country_state_city_pro/country_state_city_pro.dart';
 import 'package:flutter/material.dart';
-import 'package:players_bank_redesign/shared/app_colors.dart';
 import 'package:players_bank_redesign/shared/constants.dart';
-import 'package:players_bank_redesign/widgets/custom_select_state.dart';
 import 'package:players_bank_redesign/widgets/main_button.dart';
 import 'package:players_bank_redesign/widgets/text_field_widget.dart';
+import '../../shared/app_colors.dart';
 import '../../widgets/go_back_button.dart';
-import 'nickname_page.dart';
-import 'package:country_state_city_picker/country_state_city_picker.dart';
 
 const continueButton = 'CONTINUAR';
 const documentTitle = 'CADASTRO';
@@ -19,9 +17,10 @@ class UserDataPage extends StatefulWidget {
 }
 
 class _UserDataPageState extends State<UserDataPage> {
-  String? countryValue;
-  String? stateValue;
-  String? cityValue;
+  TextEditingController country = TextEditingController();
+  TextEditingController state = TextEditingController();
+  TextEditingController city = TextEditingController();
+  TextStyle textStyle = kEditTextStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -53,25 +52,24 @@ class _UserDataPageState extends State<UserDataPage> {
                 const SizedBox(height: sizedBoxHeightMin),
                 const TextFieldWidget(hintText: 'Órgão Emissor do RG'),
                 const SizedBox(height: sizedBoxHeightMin),
-                CustomSelectState(
-                  child: SelectState(
-                    style: kEditTextStyle,
-                    dropdownColor: AppColors.grey,
-                    onCountryChanged: (value) {
-                      setState(() {
-                        countryValue = value;
-                      });
-                    },
-                    onStateChanged: (value) {
-                      setState(() {
-                        stateValue = value;
-                      });
-                    },
-                    onCityChanged: (value) {
-                      setState(() {
-                        cityValue = value;
-                      });
-                    },
+                CountryStateCityPicker(
+                  country: country,
+                  state: state,
+                  city: city,
+                  dialogColor: AppColors.grey,
+                  textFieldDecoration: const InputDecoration(
+                    hintStyle: kEditTextStyle,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.zero,
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.zero,
+                      borderSide: BorderSide(color: AppColors.orange, width: 2),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.zero,
+                      borderSide: BorderSide(color: AppColors.orange, width: 2),
+                    ),
                   ),
                 ),
                 const SizedBox(height: sizedBoxHeightMin),
