@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:players_bank_redesign/login/sign_up/create_password_page.dart';
+import 'package:players_bank_redesign/login/sign_up/email_page.dart';
 import 'package:players_bank_redesign/shared/constants.dart';
 import 'package:players_bank_redesign/widgets/main_button.dart';
 
@@ -15,7 +16,7 @@ class NickNamePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget createPasswordPage = const CreatePasswordPage();
+    Widget emailPage = const EmailPage();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.fromLTRB(15, 45, 15, 15),
@@ -48,9 +49,9 @@ class NickNamePage extends StatelessWidget {
                   buttonText: continueButton,
                   onPressed: () => Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => createPasswordPage),
+                    MaterialPageRoute(builder: (context) => emailPage),
                   ),
-                  nextPage: const CreatePasswordPage(),
+                  nextPage: const EmailPage(),
                 ),
               ],
             ),

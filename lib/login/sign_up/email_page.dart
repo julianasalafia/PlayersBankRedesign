@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:players_bank_redesign/login/sign_up/create_password_page.dart';
+import 'package:players_bank_redesign/shared/constants.dart';
+import 'package:players_bank_redesign/widgets/main_button.dart';
 
-import '../../shared/constants.dart';
 import '../../widgets/go_back_button.dart';
-import '../../widgets/main_button.dart';
 import '../../widgets/text_field_widget.dart';
 
-const continueButton = 'REENVIAR CÓDIGO';
-const usernameTitle = 'Enviamos um código para você!';
-const hintText = '@MeuApelido';
-const codeMessageWarning =
-    'Verifique seu e-mail, caso não encontre o código verifique a caixa de spam.';
+const continueButton = 'CONTINUAR';
+const usernameTitle = 'Qual seu e-mail?';
+const hintText = 'MeuEmail@Email.com';
 
-class CodeConfirmationPage extends StatelessWidget {
-  const CodeConfirmationPage({super.key});
+class EmailPage extends StatelessWidget {
+  const EmailPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Widget createPasswordPage = const CreatePasswordPage();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.fromLTRB(15, 45, 15, 15),
@@ -36,17 +36,9 @@ class CodeConfirmationPage extends StatelessWidget {
                   style: kTitleTextStyle,
                 ),
                 const SizedBox(height: sizedBoxHeight),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    for (int i = 0; i < 4; i++)
-                      const SizedBox(
-                        width: 85,
-                        child: TextFieldNumberWidget(),
-                      ),
-                  ],
+                const TextFieldWidget(
+                  hintText: hintText,
                 ),
-                const SizedBox(height: sizedBoxHeightMin),
               ],
             ),
             Column(
@@ -54,13 +46,11 @@ class CodeConfirmationPage extends StatelessWidget {
               children: [
                 MainButtonStyle(
                   buttonText: continueButton,
-                  onPressed: () {},
-                  nextPage: null,
-                ),
-                const SizedBox(height: sizedBoxHeightMin),
-                const Text(
-                  codeMessageWarning,
-                  style: kWarningTextStyle,
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => createPasswordPage),
+                  ),
+                  nextPage: const CreatePasswordPage(),
                 ),
               ],
             ),
