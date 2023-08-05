@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:players_bank_redesign/login/sign_up/create_password_page.dart';
 import 'package:players_bank_redesign/login/sign_up/email_page.dart';
 import 'package:players_bank_redesign/shared/constants.dart';
 import 'package:players_bank_redesign/widgets/main_button.dart';

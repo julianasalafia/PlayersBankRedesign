@@ -7,7 +7,7 @@ import '../../shared/app_colors.dart';
 import '../../widgets/go_back_button.dart';
 
 const continueButton = 'CONTINUAR';
-const documentTitle = 'CADASTRO';
+const documentTitle = 'Cadastro';
 
 class UserDataPage extends StatefulWidget {
   const UserDataPage({super.key});
@@ -27,6 +27,7 @@ class _UserDataPageState extends State<UserDataPage> {
       body: Padding(
         padding: const EdgeInsets.fromLTRB(15, 45, 15, 15),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,13 +45,13 @@ class _UserDataPageState extends State<UserDataPage> {
                 ),
                 const SizedBox(height: sizedBoxHeight),
                 const TextFieldWidget(hintText: 'Meu Nome Completo'),
-                const SizedBox(height: sizedBoxHeight),
+                const SizedBox(height: sizedBoxHeightMin),
                 const TextFieldWidget(hintText: 'Eu Nasci no Dia dd/mm/AAAA'),
-                const SizedBox(height: sizedBoxHeight),
+                const SizedBox(height: sizedBoxHeightMin),
                 const TextFieldWidget(hintText: 'Meu RG'),
-                const SizedBox(height: sizedBoxHeight),
+                const SizedBox(height: sizedBoxHeightMin),
                 const TextFieldWidget(hintText: 'Órgão Emissor do RG'),
-                const SizedBox(height: sizedBoxHeight),
+                const SizedBox(height: sizedBoxHeightMin),
                 CountryStatePicker(
                   stateLabel: Visibility(
                     visible: showLabel,
@@ -82,7 +83,7 @@ class _UserDataPageState extends State<UserDataPage> {
                   ),
                   itemTextStyle: kEditTextStyle,
                   hintTextStyle: kEditTextStyle,
-                  divider: const SizedBox(height: sizedBoxHeight),
+                  divider: const SizedBox(height: sizedBoxHeightMin),
                   onCountryChanged: (ct) => setState(() {
                     country = ct;
                     state = null;
