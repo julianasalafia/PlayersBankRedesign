@@ -1,5 +1,6 @@
 import 'package:country_state_picker/country_state_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:players_bank_redesign/login/sign_up/user_profession_page.dart';
 import 'package:players_bank_redesign/shared/constants.dart';
 import 'package:players_bank_redesign/widgets/main_button.dart';
 import 'package:players_bank_redesign/widgets/text_field_widget.dart';
@@ -22,6 +23,7 @@ class _UserDataPageState extends State<UserDataPage> {
 
   @override
   Widget build(BuildContext context) {
+    Widget userProfessionPage = const UserProfessionPage();
     bool showLabel = false;
     return Scaffold(
       body: Padding(
@@ -101,8 +103,12 @@ class _UserDataPageState extends State<UserDataPage> {
                 Expanded(
                   child: MainButtonStyle(
                     buttonText: continueButton,
-                    onPressed: () {},
-                    nextPage: null,
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => userProfessionPage),
+                    ),
+                    nextPage: UserProfessionPage(),
                   ),
                 ),
               ],
