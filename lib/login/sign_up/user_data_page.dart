@@ -1,4 +1,4 @@
-import 'package:country_state_city_pro/country_state_city_pro.dart';
+import 'package:country_state_picker/country_state_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:players_bank_redesign/shared/constants.dart';
 import 'package:players_bank_redesign/widgets/main_button.dart';
@@ -17,13 +17,12 @@ class UserDataPage extends StatefulWidget {
 }
 
 class _UserDataPageState extends State<UserDataPage> {
-  TextEditingController country = TextEditingController();
-  TextEditingController state = TextEditingController();
-  TextEditingController city = TextEditingController();
-  TextStyle textStyle = kEditTextStyle;
+  String? state;
+  String? country;
 
   @override
   Widget build(BuildContext context) {
+    bool showLabel = false;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.fromLTRB(15, 45, 15, 15),
@@ -45,20 +44,29 @@ class _UserDataPageState extends State<UserDataPage> {
                 ),
                 const SizedBox(height: sizedBoxHeight),
                 const TextFieldWidget(hintText: 'Meu Nome Completo'),
-                const SizedBox(height: sizedBoxHeightMin),
+                const SizedBox(height: sizedBoxHeight),
                 const TextFieldWidget(hintText: 'Eu Nasci no Dia dd/mm/AAAA'),
-                const SizedBox(height: sizedBoxHeightMin),
+                const SizedBox(height: sizedBoxHeight),
                 const TextFieldWidget(hintText: 'Meu RG'),
-                const SizedBox(height: sizedBoxHeightMin),
+                const SizedBox(height: sizedBoxHeight),
                 const TextFieldWidget(hintText: 'Órgão Emissor do RG'),
-                const SizedBox(height: sizedBoxHeightMin),
-                CountryStateCityPicker(
-                  country: country,
-                  state: state,
-                  city: city,
-                  dialogColor: AppColors.grey,
-                  textFieldDecoration: const InputDecoration(
-                    hintStyle: kEditTextStyle,
+                const SizedBox(height: sizedBoxHeight),
+                CountryStatePicker(
+                  stateLabel: Visibility(
+                    visible: showLabel,
+                    child: Label(
+                      title: '',
+                    ),
+                  ),
+                  countryLabel: Visibility(
+                    visible: showLabel,
+                    child: Label(
+                      title: '',
+                    ),
+                  ),
+                  dropdownColor: AppColors.grey,
+                  inputDecoration: const InputDecoration(
+                    contentPadding: EdgeInsets.all(10.0),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.zero,
                     ),
@@ -70,18 +78,31 @@ class _UserDataPageState extends State<UserDataPage> {
                       borderRadius: BorderRadius.zero,
                       borderSide: BorderSide(color: AppColors.orange, width: 2),
                     ),
+                    isCollapsed: true,
                   ),
+                  itemTextStyle: kEditTextStyle,
+                  hintTextStyle: kEditTextStyle,
+                  divider: const SizedBox(height: sizedBoxHeight),
+                  onCountryChanged: (ct) => setState(() {
+                    country = ct;
+                    state = null;
+                  }),
+                  onStateChanged: (st) => setState(() {
+                    state = st;
+                  }),
                 ),
-                const SizedBox(height: sizedBoxHeightMin),
+                const SizedBox(height: sizedBoxHeight),
               ],
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+            const SizedBox(height: sizedBoxHeightMin),
+            Row(
               children: [
-                MainButtonStyle(
-                  buttonText: continueButton,
-                  onPressed: () {},
-                  nextPage: null,
+                Expanded(
+                  child: MainButtonStyle(
+                    buttonText: continueButton,
+                    onPressed: () {},
+                    nextPage: null,
+                  ),
                 ),
               ],
             ),
