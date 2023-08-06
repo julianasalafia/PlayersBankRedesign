@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  country_state_picker: ^0.0.4
+  country_state_picker: ^0.0.5
   cupertino_icons: ^1.0.2
 
 dev_dependencies:

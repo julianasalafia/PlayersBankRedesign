@@ -1,3 +1,4 @@
+import 'package:country_state_picker/components/index.dart';
 import 'package:country_state_picker/country_state_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:players_bank_redesign/login/sign_up/user_profession_page.dart';
@@ -55,6 +56,8 @@ class _UserDataPageState extends State<UserDataPage> {
                 const TextFieldWidget(hintText: 'Órgão Emissor do RG'),
                 const SizedBox(height: sizedBoxHeightMin),
                 CountryStatePicker(
+                  countryHintText: 'País',
+                  stateHintText: 'Estado',
                   stateLabel: Visibility(
                     visible: showLabel,
                     child: Label(

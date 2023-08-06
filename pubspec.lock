@@ -45,10 +45,10 @@ packages:
     dependency: "direct main"
     description:
       name: country_state_picker
-      sha256: "9efad370ad2e9b943c69b88d403a361309d90f985bb0404a9a7d54827bd8d779"
+      sha256: "3ae444923f89f5399ba142d79529e8d7217311d6f8fe4cacabfda9922339a86a"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.4"
+    version: "0.0.5"
   cupertino_icons:
     dependency: "direct main"
     description:
